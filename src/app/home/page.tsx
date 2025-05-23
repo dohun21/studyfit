@@ -13,7 +13,7 @@ export default function HomePage() {
           오늘도 StudyFit과 함께 해요! 💪
         </h1>
 
-        <div className="w-full bg-[#EFF6FF] rounded-[8px] p-4  mb-4">
+        <div className="w-full bg-[#EFF6FF] rounded-[8px] p-4 mb-4">
           <p className="text-sm text-black mb-2  ">📘 오늘의 추천 루틴</p>
           <p className="text-sm text-gray-600 mb-2">50분 공부 → 10분 스트레칭</p>
           <button className="w-full h-[40px] bg-[#3B82F6] text-white rounded-[20px] text-sm font-medium">

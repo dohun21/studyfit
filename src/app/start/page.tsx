@@ -11,7 +11,7 @@ export default function StartPage() {
         <h1 className="text-[28px] font-bold text-[#059669] mb-10">StudyFit</h1>
         <button
           onClick={() => router.push("/login")}
-          className="w-full h-[44px] bg-[#3B82F6] text-white rounded-[20px] text-sm font-medium border border-transparent shadow-none"
+          className="w-full h-[44px] bg-[#3B82F6] text-white rounded-[20px] "
         >
           시작하기
         </button>
