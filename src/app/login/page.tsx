@@ -6,6 +6,17 @@ import React from "react";
 export default function LoginPage() {
   const router = useRouter();
 
+  const handleLogin = () => {
+    // 로그인 성공했다고 가정
+    const isNewUser = true; // 또는 목표 설정이 아직 안 된 경우
+
+    if (isNewUser) {
+      router.push('/setup'); // ✅ 목표 설정 페이지로 이동
+    } else {
+      router.push('/home'); // 기존 사용자면 바로 홈으로
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-full max-w-[360px] p-6 flex flex-col items-center">
