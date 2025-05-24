@@ -7,16 +7,17 @@ export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = () => {
-    // 로그인 성공했다고 가정
-    const isNewUser = true; // 또는 목표 설정이 아직 안 된 경우
+    const goal = localStorage.getItem("goalMinutes");
+    const lastSet = localStorage.getItem("lastGoalDate");
+    const today = new Date().toISOString().slice(0, 10);
 
-    if (isNewUser) {
-      router.push('/setup'); // ✅ 목표 설정 페이지로 이동
+    // ✅ 목표는 설정되어 있지만 오늘 이미 설정한 경우
+    if (goal && lastSet === today) {
+      router.push("/home");
     } else {
-      router.push('/home'); // 기존 사용자면 바로 홈으로
+      router.push("/setup");
     }
   };
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-full max-w-[360px] p-6 flex flex-col items-center">
@@ -36,7 +37,7 @@ export default function LoginPage() {
         </div>
 
         <button
-          onClick={() => router.push("/home")} // ✅ 여기가 핵심
+          onClick={handleLogin} // ✅ 여기 바뀐 부분!
           className="w-full h-[48px] bg-[#3B82F6] text-white rounded-[20px] mt-6 text-base font-medium"
         >
           로그인
